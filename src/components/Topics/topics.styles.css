@@ -1,5 +1,29 @@
 .grid-sys{
     display: grid !important;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 10px;
+}
+.backgrnd{
+    background-color: rgb(233, 237, 240);
+}
+.img-header{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+@media screen and (max-width:1200px) {
+    .grid-sys{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (max-width:768px) {
+    .grid-sys{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:500px) {
+    .grid-sys{
+        grid-template-columns: repeat(1,1fr);
+        align-items: center;
+    }
 }

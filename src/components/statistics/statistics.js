@@ -22,7 +22,7 @@ import { useLoaderData } from 'react-router-dom';
      };
     return (
         <div className='container mt-5'>
-            <BarChart width={550} height={450} data={simplifiedData(getData)}>
+            <BarChart width={450} height={450} data={simplifiedData(getData)}>
                 <Bar dataKey="uv" fill="#8884d8" />
                 <XAxis dataKey="name"/>
             </BarChart>

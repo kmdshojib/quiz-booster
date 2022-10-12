@@ -7,7 +7,7 @@ import {toastSuccessText,toastTheme,toastWarningText} from '../../utils/toast'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+import './quiz.css'
 
 const AllQuiz = () => {
     const [show, setShow] = useState(false);
@@ -33,7 +33,7 @@ const AllQuiz = () => {
             <ToastContainer />
             <h4>Quiz for: {quizData.data.name}</h4>
             {
-                quizData.data.questions.map(data =>(
+                quizData.data.questions.map((data,index) =>(
                     <div key={data.id}>
                         <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
@@ -44,8 +44,11 @@ const AllQuiz = () => {
                                 <Button variant="secondary" onClick={handleClose}>Close</Button>
                             </Modal.Footer>
                         </Modal>
-                        <h5>{data.question}</h5>
-                        <Button id={data.correctAnswer} onClick={handleShow}>See Answer</Button>
+
+                        <div className='d-flex '>
+                            <h6 className='me-2'>Question:{index+1} {data.question}</h6>
+                            <Button className="answer-btn" id={data.correctAnswer} onClick={handleShow}>See Answer</Button>
+                        </div>
                         {
                             data.options.map((options,index)=>(
                                 <InputGroup key={index} className='mb-2 ' >
