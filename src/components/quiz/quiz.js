@@ -41,12 +41,7 @@ const AllQuiz = () => {
                             </Modal.Header>
                             <Modal.Body>{answer}</Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Close
-                                </Button>
-                                <Button variant="primary" onClick={handleClose}>
-                                    Save Changes
-                                </Button>
+                                <Button variant="secondary" onClick={handleClose}>Close</Button>
                             </Modal.Footer>
                         </Modal>
                         <h5>{data.question}</h5>

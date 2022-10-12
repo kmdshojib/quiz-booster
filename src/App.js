@@ -22,7 +22,7 @@ function App() {
         loader: async () => fetch("https://openapi.programming-hero.com/api/quiz"),
       },
      {
-      path:'/:id',
+      path:'quizpage/:id',
       element: <AllQuiz />,
       loader: async (params) =>fetch(`https://openapi.programming-hero.com/api/quiz/${params.params.id}`),
      },
@@ -48,5 +48,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

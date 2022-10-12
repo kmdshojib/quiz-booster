@@ -8,7 +8,7 @@ const Header = () => {
     <div>
       <Navbar bg="light" variant="light">
         <Container>
-        <Navbar.Brand><NavLink to="/">Quiz Boost</NavLink></Navbar.Brand>
+        <Navbar.Brand className='text-bold'><NavLink to="/">Quiz Booster</NavLink></Navbar.Brand>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
                 <NavLink  className={({ isActive }) =>isActive ? "nav-link active text-decoration-underline" : "nav-link" }  to="/">Topics</NavLink>
