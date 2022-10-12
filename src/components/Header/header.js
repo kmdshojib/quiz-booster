@@ -11,9 +11,9 @@ const Header = () => {
         <Navbar.Brand to="/">Quiz Boost</Navbar.Brand>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-                <NavLink className="nav-link active" aria-current="page" href="#">Topics</NavLink>
-                <NavLink className="nav-link" href="#">Features</NavLink>
-                <NavLink className="nav-link" href="#">Pricing</NavLink>
+                <NavLink className="nav-link active" aria-current="page" to="/">Topics</NavLink>
+                <NavLink className="nav-link" to="">Features</NavLink>
+                <NavLink className="nav-link" to="">Pricing</NavLink>
             </div>
             </div>
         </Container>
