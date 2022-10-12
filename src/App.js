@@ -8,6 +8,8 @@ import Main from './layout/main'
 import Topics from "./components/Topics/topics"
 import AllQuiz from "./components/quiz/quiz"
 import Statistics from './components/statistics/statistics'
+import Blog from './components/blog/blog'
+import NotFoud from './components/404/notfound';
 
 function App() {
   const route = createBrowserRouter([
@@ -28,8 +30,16 @@ function App() {
       path:'/statistics',
       element:<Statistics />,
       loader: async () => fetch("https://openapi.programming-hero.com/api/quiz")
+     },
+     {
+      path:'/blog',
+      element: <Blog />
      }
     ]
+  },
+  {
+      path:"*",
+      element: <NotFoud />
     }
   ])
   return (

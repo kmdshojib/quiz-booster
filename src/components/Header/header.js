@@ -8,12 +8,12 @@ const Header = () => {
     <div>
       <Navbar bg="light" variant="light">
         <Container>
-        <Navbar.Brand to="/">Quiz Boost</Navbar.Brand>
+        <Navbar.Brand><NavLink to="/">Quiz Boost</NavLink></Navbar.Brand>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-                <NavLink className="nav-link active" aria-current="page" to="/">Topics</NavLink>
-                <NavLink className="nav-link" to="/statistics">Statistics</NavLink>
-                <NavLink className="nav-link" to="">Blog</NavLink>
+                <NavLink  className={({ isActive }) =>isActive ? "nav-link active text-decoration-underline" : "nav-link" }  to="/">Topics</NavLink>
+                <NavLink className={({ isActive }) =>isActive ? "nav-link active text-decoration-underline" : "nav-link" } to="/statistics">Statistics</NavLink>
+                <NavLink className={({ isActive }) =>isActive ? "nav-link active text-decoration-underline" : "nav-link" } to="/blog">Blog</NavLink>
             </div>
             </div>
         </Container>
