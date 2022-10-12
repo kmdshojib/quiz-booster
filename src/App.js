@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import Main from './layout/main'
 import Topics from "./components/Topics/topics"
-import Quiz from "./components/quiz/quiz"
+import AllQuiz from "./components/quiz/quiz"
 
 function App() {
   const route = createBrowserRouter([
@@ -20,9 +20,9 @@ function App() {
       },
      {
       path:'/:id',
-      element: <Quiz />,
+      element: <AllQuiz />,
       loader: async (params) =>fetch(`https://openapi.programming-hero.com/api/quiz/${params.params.id}`),
-     }
+     },
     ]
     }
   ])

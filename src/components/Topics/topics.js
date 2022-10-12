@@ -6,7 +6,6 @@ import './topics.styles.css'
 
 const Topics = () => {
     const topicData = useLoaderData()
-    // console.log(topicData.data)
   return (
       <div className='container d-grid grid-sys'>
         {
