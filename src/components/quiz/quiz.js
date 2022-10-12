@@ -13,16 +13,20 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AllQuiz = () => {
     const [show, setShow] = useState(false);
+    const [answer, setAnswer] = useState([])
     const quizData = useLoaderData()
     const handlecorrectAnswer = (e) => {
         const inputValue = e.target.value
         const answers = quizData.data.questions.map(({correctAnswer}) => correctAnswer )
         answers.includes(inputValue) ? toast.success(toastSuccessText,toastTheme) : toast.error(toastWarningText,toastTheme)
     }
-    
+    // modal shoowHide
+    const handleClose = () => setShow(false)
 
-    const handleClose = (e) =>e.target && setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = (e) => {
+        setAnswer(e.target.id)
+        setShow(true);}
+
     return (
         <div className="quiz container">
             <ToastContainer />
@@ -34,7 +38,7 @@ const AllQuiz = () => {
                             <Modal.Header closeButton>
                                 <Modal.Title>Correct Answer</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>{data.correctAnswer}</Modal.Body>
+                            <Modal.Body>{answer}</Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>
                                     Close
@@ -45,7 +49,7 @@ const AllQuiz = () => {
                             </Modal.Footer>
                         </Modal>
                         <h5>{data.question}</h5>
-                        <FontAwesomeIcon onClick={handleShow} icon={faEye} />
+                        <div id={data.correctAnswer} onClick={handleShow}><FontAwesomeIcon  icon={faEye} /></div>
                         {
                             data.options.map((options,index)=>(
                                 <InputGroup key={index} className='mb-2 ' >
