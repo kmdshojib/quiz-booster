@@ -2,13 +2,11 @@ import React,{useState} from 'react'
 
 import { useLoaderData} from 'react-router-dom'
 import { InputGroup,Modal,Button } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faEye } from '@fortawesome/free-solid-svg-icons'
-
 import {toastSuccessText,toastTheme,toastWarningText} from '../../utils/toast'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const AllQuiz = () => {
@@ -25,7 +23,10 @@ const AllQuiz = () => {
 
     const handleShow = (e) => {
         setAnswer(e.target.id)
-        setShow(true);}
+        setShow(true);
+    }
+
+    
 
     return (
         <div className="quiz container">
@@ -49,7 +50,7 @@ const AllQuiz = () => {
                             </Modal.Footer>
                         </Modal>
                         <h5>{data.question}</h5>
-                        <div id={data.correctAnswer} onClick={handleShow}><FontAwesomeIcon  icon={faEye} /></div>
+                        <Button id={data.correctAnswer} onClick={handleShow}>See Answer</Button>
                         {
                             data.options.map((options,index)=>(
                                 <InputGroup key={index} className='mb-2 ' >
