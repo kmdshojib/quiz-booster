@@ -3,17 +3,23 @@ import React from 'react'
 import { useLoaderData} from 'react-router-dom'
 import { InputGroup } from 'react-bootstrap'
 
+import {toastSuccessText,toastTheme,toastWarningText} from '../../utils/toast'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const AllQuiz = () => {
     const quizData = useLoaderData()
-    // console.log(quizData.data.questions.map(({correctAnswer}) => correctAnswer ))
     const handlecorrectAnswer = (e) => {
         const inputValue = e.target.value
         const answers = quizData.data.questions.map(({correctAnswer}) => correctAnswer )
-        console.log(answers.includes(inputValue))
+        answers.includes(inputValue) ? toast.success(toastSuccessText,toastTheme) : toast.error(toastWarningText,toastTheme)
         console.log(inputValue)
     }
     return (
         <div className="quiz container">
+            <ToastContainer />
             <h4>Quiz for: {quizData.data.name}</h4>
             {
                 quizData.data.questions.map(data =>(
