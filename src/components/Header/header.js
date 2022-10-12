@@ -13,7 +13,7 @@ const Header = () => {
             <div className="navbar-nav">
                 <NavLink className="nav-link active" aria-current="page" to="/">Topics</NavLink>
                 <NavLink className="nav-link" to="/statistics">Statistics</NavLink>
-                <NavLink className="nav-link" to="">Pricing</NavLink>
+                <NavLink className="nav-link" to="">Blog</NavLink>
             </div>
             </div>
         </Container>
