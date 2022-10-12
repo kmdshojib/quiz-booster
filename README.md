@@ -19,7 +19,7 @@ Basically this is a Quiz app.
 
 
 ## Live
-[Quiz Booster]()
+[Quiz Booster](https://rainbow-haupia-7ec045.netlify.app/)
 
 
 
